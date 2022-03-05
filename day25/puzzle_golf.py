@@ -1,0 +1,3 @@
+steps, grid = 1, [[".>v".index(c) for c in line] for line in open("input.txt", "r").read().splitlines()]
+while not (g := None) and (old := grid) != (grid := [[0 if ((a := (g if g else (g := [[0 if ((a := row[x]), row[(x+1)%len(grid[0])]) == (1, 0) else (1 if (a, row[x-1]) == (0, 1) else a) for x in range(len(grid[0]))] for row in grid]))[y][x]), g[(y+1)%len(grid)][x]) == (2, 0) else (2 if (a, g[y-1][x]) == (0, 2) else a) for x in range(len(grid[0]))] for y in range(len(grid))]): steps += 1
+print(steps)

@@ -1,0 +1,1 @@
+L=[int(k)for k in open("input.txt").read()if k!="\n"];print(sum(1+L[x]for x in range(10000)if all(L[a]>L[x]for a in[x-1,x+1,x-100,x+100]if a in range(10000))))
